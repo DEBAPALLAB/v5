@@ -89,9 +89,9 @@ export default function Loader({ onComplete }: LoaderProps) {
                 ? "var(--font-playfair), Georgia, serif"
                 : "var(--font-inter), sans-serif",
               fontStyle: LINES[idx].serif ? "italic" : "normal",
-              fontSize: LINES[idx].serif ? "clamp(1.6rem, 3.5vw, 2.8rem)" : "clamp(0.7rem, 1.4vw, 1rem)",
+              fontSize: LINES[idx].serif ? "clamp(1.6rem, 3.5vw, 2.8rem)": "clamp(0.7rem, 1.4vw, 1rem)",
               fontWeight: LINES[idx].serif ? 400 : 400,
-              letterSpacing: LINES[idx].serif ? "-0.01em" : "0.55em",
+              letterSpacing: LINES[idx].serif ? "-0.01em": "0.55em",
               color: idx === 4 ? "#C8F135" : "#E8E2D9",
               textAlign: "center",
               whiteSpace: "nowrap",

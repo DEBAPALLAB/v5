@@ -20,7 +20,7 @@ export default function CTAFinal() {
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
-        padding: "80px 56px",
+        padding: "80px var(--px)",
       }}
     >
       <div className="grain" />
@@ -93,7 +93,7 @@ export default function CTAFinal() {
             lineHeight: 1.7,
             color: "rgba(232,226,217,0.45)",
             maxWidth: 460,
-            margin: "0 auto 56px",
+            margin: "0 auto var(--px)",
           }}
         >
           Drop us a message. We&apos;ll get back within 24 hours. No agency jargon,
@@ -102,7 +102,7 @@ export default function CTAFinal() {
 
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <motion.a
-            href="mailto:hello@lucide.tech"
+            href="mailto:techlucide@gmail.com"
             whileHover={{ scale: 1.03, backgroundColor: "#d4ff4a" }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.2 }}
@@ -122,11 +122,13 @@ export default function CTAFinal() {
               fontWeight: 500,
             }}
           >
-            hello@lucide.tech →
+            techlucide@gmail.com →
           </motion.a>
 
           <motion.a
-            href="#"
+            href="https://wa.me/916000942593"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ borderColor: "rgba(232,226,217,0.4)" }}
             whileTap={{ scale: 0.97 }}
             style={{
@@ -145,7 +147,7 @@ export default function CTAFinal() {
               transition: "border-color 0.25s",
             }}
           >
-            View our work
+            WhatsApp: +91 60009 42593
           </motion.a>
         </div>
       </div>
@@ -160,7 +162,7 @@ export default function CTAFinal() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "flex-end",
-          padding: "24px 56px 40px",
+          padding: "24px var(--px) 40px",
           borderTop: "1px solid rgba(232,226,217,0.04)",
         }}
       >

@@ -20,11 +20,11 @@ export default function LetterSection() {
         position: "relative",
         backgroundColor: "#E8E2D9",
         color: "#0D0C0B",
-        padding: "140px 56px",
+        padding: "140px var(--px)",
         overflow: "hidden",
       }}
     >
-      <div className="grain" style={{ opacity: 0.025, mixBlendMode: "multiply" }} />
+      <div className="grain"style={{ opacity: 0.025, mixBlendMode: "multiply" }} />
 
       <div
         style={{

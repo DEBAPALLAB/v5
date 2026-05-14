@@ -51,7 +51,7 @@ export default function ServicesAccordion() {
       style={{
         position: "relative",
         backgroundColor: "#0D0C0B",
-        padding: "120px 56px",
+        padding: "120px var(--px)",
       }}
     >
       {/* Header */}
@@ -81,59 +81,63 @@ export default function ServicesAccordion() {
       <div style={{ borderTop: "1px solid rgba(232,226,217,0.06)" }}>
         {SERVICES.map((s, i) => (
           <div key={s.n} style={{ borderBottom: "1px solid rgba(232,226,217,0.06)" }}>
-            {/* Row header */}
-            <button
-              onClick={() => setOpen(open === i ? null : i)}
-              style={{
-                width: "100%",
-                display: "grid",
-                gridTemplateColumns: "60px 1fr auto 80px",
-                alignItems: "center",
-                gap: 32,
-                padding: "28px 0",
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                textAlign: "left",
-              }}
-            >
-              <span
+              <button
+                onClick={() => setOpen(open === i ? null : i)}
                 style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: 10,
-                  letterSpacing: "0.2em",
-                  color: open === i ? "#C8F135" : "rgba(232,226,217,0.3)",
-                  transition: "color 0.3s",
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: "clamp(16px, 3vw, 32px)",
+                  padding: "28px 0",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  textAlign: "left",
                 }}
               >
-                {s.n}
-              </span>
-              <span
-                style={{
-                  fontFamily: "var(--font-inter), sans-serif",
-                  fontSize: "clamp(1.4rem, 2.8vw, 2.2rem)",
-                  fontWeight: 400,
-                  letterSpacing: "-0.02em",
-                  color: open === i ? "#E8E2D9" : "rgba(232,226,217,0.75)",
-                  transition: "color 0.3s",
-                }}
-              >
-                {s.name}
-              </span>
-              <span
-                style={{
-                  fontFamily: "var(--font-playfair), serif",
-                  fontStyle: "italic",
-                  fontSize: "clamp(0.9rem, 1.3vw, 1.1rem)",
-                  color: "rgba(232,226,217,0.3)",
-                  paddingRight: 32,
-                  display: "block",
-                  maxWidth: 320,
-                  lineHeight: 1.4,
-                }}
-              >
-                {s.pitch}
-              </span>
+                <div style={{ display: "flex", alignItems: "center", gap: "clamp(16px, 4vw, 60px)" }}>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.2em",
+                      color: open === i ? "#C8F135" : "rgba(232,226,217,0.3)",
+                      transition: "color 0.3s",
+                      minWidth: "24px"
+                    }}
+                  >
+                    {s.n}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontSize: "clamp(1.4rem, 2.8vw, 2.2rem)",
+                      fontWeight: 400,
+                      letterSpacing: "-0.02em",
+                      color: open === i ? "#E8E2D9" : "rgba(232,226,217,0.75)",
+                      transition: "color 0.3s",
+                    }}
+                  >
+                    {s.name}
+                  </span>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+                  <span
+                    className="hide-on-mobile"
+                    style={{
+                      fontFamily: "var(--font-playfair), serif",
+                      fontStyle: "italic",
+                      fontSize: "clamp(0.9rem, 1.3vw, 1.1rem)",
+                      color: "rgba(232,226,217,0.3)",
+                      display: "block",
+                      maxWidth: 320,
+                      lineHeight: 1.4,
+                      textAlign: "right"
+                    }}
+                  >
+                    {s.pitch}
+                  </span>
               <motion.span
                 animate={{ rotate: open === i ? 45 : 0 }}
                 transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -149,6 +153,7 @@ export default function ServicesAccordion() {
               >
                 +
               </motion.span>
+                </div>
             </button>
 
             {/* Expanded content */}
@@ -163,24 +168,26 @@ export default function ServicesAccordion() {
                 >
                   <div
                     style={{
-                      display: "grid",
-                      gridTemplateColumns: "1fr 1fr",
-                      gap: 64,
-                      padding: "0 0 56px 92px",
+                      display: "flex",
+                      flexWrap: "wrap",
+                      gap: "clamp(32px, 5vw, 64px)",
+                      padding: "0 0 var(--px) clamp(0px, 5vw, 92px)",
                     }}
                   >
                     {/* Left: body */}
-                    <p
-                      style={{
-                        fontFamily: "var(--font-playfair), serif",
-                        fontStyle: "italic",
-                        fontSize: "clamp(1.1rem, 1.6vw, 1.3rem)",
-                        lineHeight: 1.7,
-                        color: "rgba(232,226,217,0.6)",
-                      }}
-                    >
-                      {s.body}
-                    </p>
+                    <div style={{ flex: "1 1 min(100%, 400px)" }}>
+                      <p
+                        style={{
+                          fontFamily: "var(--font-playfair), serif",
+                          fontStyle: "italic",
+                          fontSize: "clamp(1.1rem, 1.6vw, 1.3rem)",
+                          lineHeight: 1.7,
+                          color: "rgba(232,226,217,0.6)",
+                        }}
+                      >
+                        {s.body}
+                      </p>
+                    </div>
                     {/* Right: deliverables + time */}
                     <div>
                       <p

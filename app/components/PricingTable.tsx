@@ -59,7 +59,7 @@ export default function PricingTable() {
       style={{
         position: "relative",
         backgroundColor: "#0D0C0B",
-        padding: "120px 56px",
+        padding: "120px var(--px)",
         borderTop: "1px solid rgba(232,226,217,0.06)",
       }}
     >
@@ -91,7 +91,7 @@ export default function PricingTable() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
           gap: 1,
           backgroundColor: "rgba(232,226,217,0.06)",
         }}
@@ -103,7 +103,7 @@ export default function PricingTable() {
             transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
             style={{
               backgroundColor: plan.highlight ? "#C8F135" : "#0D0C0B",
-              color: plan.highlight ? "#0D0C0B" : "#E8E2D9",
+              color: plan.highlight ? "#0D0C0B": "#E8E2D9",
               padding: "48px 40px",
               display: "flex",
               flexDirection: "column",
@@ -178,7 +178,7 @@ export default function PricingTable() {
                 >
                   <span
                     style={{
-                      color: plan.highlight ? "#0D0C0B" : "#C8F135",
+                      color: plan.highlight ? "#0D0C0B": "#C8F135",
                       fontSize: 8,
                       opacity: 1,
                     }}
@@ -193,7 +193,7 @@ export default function PricingTable() {
             {/* Footer */}
             <div
               style={{
-                borderTop: `1px solid ${plan.highlight ? "rgba(13,12,11,0.12)" : "rgba(232,226,217,0.08)"}`,
+                borderTop: `1px solid ${plan.highlight ? "rgba(13,12,11,0.12)": "rgba(232,226,217,0.08)"}`,
                 paddingTop: 32,
               }}
             >
@@ -228,7 +228,7 @@ export default function PricingTable() {
               </div>
 
               <a
-                href="mailto:hello@lucide.tech"
+                href="mailto:techlucide@gmail.com"
                 style={{
                   display: "block",
                   width: "100%",
@@ -238,9 +238,9 @@ export default function PricingTable() {
                   fontSize: 10,
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
-                  backgroundColor: plan.highlight ? "#0D0C0B" : "rgba(232,226,217,0.06)",
+                  backgroundColor: plan.highlight ? "#0D0C0B": "rgba(232,226,217,0.06)",
                   color: plan.highlight ? "#C8F135" : "rgba(232,226,217,0.65)",
-                  border: `1px solid ${plan.highlight ? "transparent" : "rgba(232,226,217,0.1)"}`,
+                  border: `1px solid ${plan.highlight ? "transparent": "rgba(232,226,217,0.1)"}`,
                   transition: "all 0.25s ease",
                   textDecoration: "none",
                 }}

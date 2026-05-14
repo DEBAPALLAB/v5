@@ -41,7 +41,7 @@ function SiteNav() {
     { icon: <Briefcase size={SZ} strokeWidth={1.4} />, label: "Work", onClick: () => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" }) },
     { icon: <Layers size={SZ} strokeWidth={1.4} />, label: "Services", onClick: () => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" }) },
     { icon: <Mail size={SZ} strokeWidth={1.4} />, label: "Contact", onClick: () => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }) },
-    { icon: <ArrowUpRight size={SZ} strokeWidth={1.4} />, label: "Start a Project", onClick: () => { window.location.href = "mailto:hello@lucide.tech"; }, className: "dock-cta" },
+    { icon: <ArrowUpRight size={SZ} strokeWidth={1.4} />, label: "Start a Project", onClick: () => { window.location.href = "mailto:techlucide@gmail.com"; }, className: "dock-cta" },
   ];
   return <Dock items={items} panelHeight={56} baseItemSize={42} magnification={64} distance={155} />;
 }
@@ -62,7 +62,7 @@ function Hero() {
         backgroundColor: "#0D0C0B",
         display: "flex",
         flexDirection: "column",
-        padding: "0 56px",
+        padding: "0 var(--px)",
         overflow: "hidden",
       }}
     >
@@ -74,8 +74,8 @@ function Hero() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <pattern id="hero-grid" width="80" height="80" patternUnits="userSpaceOnUse">
-            <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#E8E2D9" strokeWidth="0.5" />
+          <pattern id="hero-grid" width="80" height="80"patternUnits="userSpaceOnUse">
+            <path d="M 80 0 L 0 0 0 80"fill="none" stroke="#E8E2D9" strokeWidth="0.5" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#hero-grid)" />
@@ -130,7 +130,7 @@ function Hero() {
             EST. 2023
           </span>
           <motion.a
-            href="mailto:hello@lucide.tech"
+            href="mailto:techlucide@gmail.com"
             whileHover={{ color: "#C8F135" }}
             style={{
               fontFamily: "var(--font-mono)",
@@ -142,7 +142,7 @@ function Hero() {
               transition: "color 0.25s",
             }}
           >
-            hello@lucide.tech
+            techlucide@gmail.com
           </motion.a>
         </div>
       </motion.div>
@@ -250,7 +250,7 @@ function Hero() {
 
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <motion.a
-                href="mailto:hello@lucide.tech"
+                href="mailto:techlucide@gmail.com"
                 whileHover={{ backgroundColor: "#d4ff4a", scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.2 }}
@@ -295,6 +295,30 @@ function Hero() {
               >
                 See our work
               </motion.a>
+
+              <motion.a
+                href="https://wa.me/916000942593"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ borderColor: "rgba(232,226,217,0.3)", color: "#E8E2D9" }}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "16px 40px",
+                  border: "1px solid rgba(232,226,217,0.12)",
+                  color: "rgba(232,226,217,0.4)",
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 9,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                  transition: "border-color 0.25s, color 0.25s",
+                }}
+              >
+                WhatsApp Us
+              </motion.a>
             </div>
           </motion.div>
         </div>
@@ -313,7 +337,7 @@ function Hero() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "16px 56px",
+          padding: "16px var(--px)",
           borderTop: "1px solid rgba(232,226,217,0.04)",
           zIndex: 2,
         }}
@@ -341,7 +365,7 @@ function Hero() {
 /* ─── Stats band ─────────────────────────────────────── */
 function StatsBand() {
   const stats = [
-    { n: "48", label: "Projects shipped" },
+    { n: "10", label: "Projects shipped" },
     { n: "< 3s", label: "Avg. load time" },
     { n: "100%", label: "Client ownership" },
     { n: "2wk", label: "Fastest turnaround" },
@@ -351,7 +375,7 @@ function StatsBand() {
     <section
       style={{
         backgroundColor: "#C8F135",
-        padding: "32px 56px",
+        padding: "32px var(--px)",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",

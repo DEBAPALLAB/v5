@@ -22,10 +22,16 @@
   --muted:     rgba(232, 226, 217, 0.45);
   --border:    rgba(232, 226, 217, 0.08);
 
+  --px: 56px;
+
   --font-sans: var(--font-inter), -apple-system, sans-serif;
   --font-serif: var(--font-playfair), Georgia, serif;
   --font-mono:  var(--font-mono-var, var(--font-mono)), "Courier New", monospace;
 }
+
+@media (max-width: 1024px) { :root { --px: 40px; } }
+@media (max-width: 768px) { :root { --px: 24px; } }
+@media (max-width: 480px) { :root { --px: 16px; } }
 
 html {
   overflow-x: clip;
@@ -84,4 +90,9 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 1px;
   background: var(--border);
+}
+
+
+@media (max-width: 768px) {
+  .hide-on-mobile { display: none !important; }
 }

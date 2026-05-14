@@ -154,7 +154,7 @@ export default function ManifestoScroll() {
         position: "relative",
         backgroundColor: "#E8E2D9",
         color: "#0D0C0B",
-        padding: "140px 56px",
+        padding: "140px var(--px)",
         overflow: "hidden",
       }}
     >
