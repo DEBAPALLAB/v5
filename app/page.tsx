@@ -41,7 +41,7 @@ function SiteNav() {
     { icon: <Briefcase size={SZ} strokeWidth={1.4} />, label: "Work", onClick: () => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" }) },
     { icon: <Layers size={SZ} strokeWidth={1.4} />, label: "Services", onClick: () => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" }) },
     { icon: <Mail size={SZ} strokeWidth={1.4} />, label: "Contact", onClick: () => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }) },
-    { icon: <ArrowUpRight size={SZ} strokeWidth={1.4} />, label: "Start a Project", onClick: () => { window.location.href = "mailto:techlucide@gmail.com"; }, className: "dock-cta" },
+    { icon: <ArrowUpRight size={SZ} strokeWidth={1.4} />, label: "Start a Project", onClick: () => { window.open("https://mail.google.com/mail/?view=cm&fs=1&to=techlucide@gmail.com", "_blank"); }, className: "dock-cta" },
   ];
   return <Dock items={items} panelHeight={56} baseItemSize={42} magnification={64} distance={155} />;
 }
@@ -130,7 +130,9 @@ function Hero() {
             EST. 2023
           </span>
           <motion.a
-            href="mailto:techlucide@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=techlucide@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ color: "#C8F135" }}
             style={{
               fontFamily: "var(--font-mono)",
@@ -250,7 +252,9 @@ function Hero() {
 
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <motion.a
-                href="mailto:techlucide@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=techlucide@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ backgroundColor: "#d4ff4a", scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.2 }}

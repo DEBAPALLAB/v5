@@ -102,7 +102,9 @@ export default function CTAFinal() {
 
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <motion.a
-            href="mailto:techlucide@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=techlucide@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.03, backgroundColor: "#d4ff4a" }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.2 }}

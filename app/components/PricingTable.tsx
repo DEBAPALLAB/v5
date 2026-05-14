@@ -228,7 +228,9 @@ export default function PricingTable() {
               </div>
 
               <a
-                href="mailto:techlucide@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=techlucide@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   display: "block",
                   width: "100%",
