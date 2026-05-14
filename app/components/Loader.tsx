@@ -44,7 +44,7 @@ export default function Loader({ onComplete }: LoaderProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ y: "-100%", transition: { duration: 1.1, ease: [0.87, 0, 0.13, 1] } }}
       style={{
