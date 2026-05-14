@@ -1,49 +1,87 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─────────────────────────────────────────────────────────
+   V5 Global CSS — Lucide Tech
+   Palette:
+     Obsidian   #0D0C0B  — primary dark canvas
+     Bone       #E8E2D9  — warm cream, primary light
+     Acid       #C8F135  — single shock accent
+     Graphite   #1C1A18  — elevated dark surface
+     Muted      rgba(232,226,217,0.45) — body text on dark
+   ───────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --obsidian:  #0D0C0B;
+  --bone:      #E8E2D9;
+  --acid:      #C8F135;
+  --graphite:  #1C1A18;
+  --muted:     rgba(232, 226, 217, 0.45);
+  --border:    rgba(232, 226, 217, 0.08);
+
+  --font-sans: var(--font-inter), -apple-system, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-mono:  var(--font-mono-var, var(--font-mono)), "Courier New", monospace;
 }
 
 html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: clip;
+  /* Do NOT set overflow-y:hidden — breaks sticky */
+  background: var(--obsidian);
 }
 
 body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100dvh;
+  background: var(--obsidian);
+  color: var(--bone);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  font-family: var(--font-sans);
+  position: relative;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* ── Lenis ────────────────────────────────────────────── */
+.lenis.lenis-smooth          { scroll-behavior: auto !important; }
+.lenis.lenis-stopped         { overflow: hidden; }
+
+/* ── Scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar          { width: 3px; }
+::-webkit-scrollbar-track    { background: transparent; }
+::-webkit-scrollbar-thumb    { background: rgba(232,226,217,0.12); }
+
+/* ── Selection ────────────────────────────────────────── */
+::selection { background: var(--acid); color: var(--obsidian); }
+
+/* ── Global Link Reset ────────────────────────────────── */
+a { color: inherit; text-decoration: none; }
+
+/* ── Utility: Grain Overlay ───────────────────────────── */
+.grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  background-size: 180px 180px;
+  z-index: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* ── Utility: Label ───────────────────────────────────── */
+.label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.5;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* ── Utility: Divider ─────────────────────────────────── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
 }

@@ -1,0 +1,119 @@
+/* ── Dock ──────────────────────────────────────────────── */
+.dock-outer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+  padding: 0 16px;
+}
+
+.dock-panel {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: fit-content;
+  gap: 6px;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, rgba(28,26,24,0.92) 0%, rgba(13,12,11,0.96) 100%);
+  backdrop-filter: blur(32px) saturate(160%);
+  -webkit-backdrop-filter: blur(32px) saturate(160%);
+  border: 1px solid rgba(232,226,217,0.07);
+  padding: 7px;
+  pointer-events: all;
+  box-shadow:
+    0 28px 80px rgba(0,0,0,0.5),
+    0 2px 4px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+  overflow: hidden;
+}
+
+.dock-panel::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 0%, rgba(200,241,53,0.08), transparent 60%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.dock-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid rgba(232,226,217,0.07);
+  cursor: pointer;
+  outline: none;
+  color: rgba(232,226,217,0.65);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 8px 20px rgba(0,0,0,0.18);
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+  will-change: transform;
+}
+
+.dock-item:hover {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border-color: rgba(232,226,217,0.12);
+  color: #E8E2D9;
+}
+
+.dock-item:focus-visible {
+  outline: 2px solid rgba(200,241,53,0.7);
+  outline-offset: 3px;
+}
+
+.dock-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.dock-label {
+  position: absolute;
+  top: -2.4rem;
+  left: 50%;
+  width: max-content;
+  white-space: nowrap;
+  border-radius: 999px !important;
+  border: 1px solid rgba(232,226,217,0.08);
+  background: rgba(13,12,11,0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 5px 10px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(232,226,217,0.75);
+  transform: translateX(-50%);
+  pointer-events: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.dock-cta {
+  background: linear-gradient(180deg, rgba(200,241,53,0.2), rgba(200,241,53,0.1)) !important;
+  border-color: rgba(200,241,53,0.28) !important;
+  color: #C8F135 !important;
+}
+.dock-cta:hover {
+  background: linear-gradient(180deg, rgba(200,241,53,0.28), rgba(200,241,53,0.16)) !important;
+  color: #d8ff4f !important;
+}
+.dock-cta::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 0%, rgba(200,241,53,0.22), transparent 60%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
